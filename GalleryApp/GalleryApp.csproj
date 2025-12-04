@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
@@ -66,13 +66,18 @@
 
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
-	  <Folder Include="Views\" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="GalleryPage.xaml.cs">
 	    <DependentUpon>GalleryPage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\PhotoCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
