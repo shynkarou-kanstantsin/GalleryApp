@@ -16,12 +16,12 @@ namespace GalleryApp.ViewModels
         private ObservableCollection<PhotoModel> feedPhotos;
 
         [ObservableProperty]
-        private ObservableCollection<PhotoModel> favoritePhotos;
+        private ObservableCollection<PhotoModel> favouritePhotos;
 
         public GalleryViewModel()
         {
             FeedPhotos = new ObservableCollection<PhotoModel>();
-            FavoritePhotos = new ObservableCollection<PhotoModel>();
+            FavouritePhotos = new ObservableCollection<PhotoModel>();
         }
         
         [RelayCommand]
@@ -29,12 +29,12 @@ namespace GalleryApp.ViewModels
         {
             if (photo.IsFavourite)
             {
-                FavoritePhotos.Remove(photo);
+                FavouritePhotos.Remove(photo);
                 photo.IsFavourite = false;
             }
             else
             {
-                FavoritePhotos.Add(photo);
+                FavouritePhotos.Add(photo);
                 photo.IsFavourite = true;
             }
         }
