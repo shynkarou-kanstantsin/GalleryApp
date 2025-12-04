@@ -4,10 +4,30 @@
              xmlns:controls="clr-namespace:GalleryApp.Views.Controls"
              x:Class="GalleryApp.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <controls:PhotoCard/>
-        </VerticalStackLayout>
-    </ScrollView>
+    <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
+            <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
+            <Button Text="Favorites" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
+        </HorizontalStackLayout>
+        
+        <CollectionView Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="3"
+                                 HorizontalItemSpacing="5" VerticalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:PhotoCard/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
 </ContentPage>
