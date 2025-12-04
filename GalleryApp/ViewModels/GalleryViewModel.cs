@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GalleryApp.Models;
+using GalleryApp.Services;
 
 namespace GalleryApp.ViewModels
 {
@@ -17,6 +18,8 @@ namespace GalleryApp.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<PhotoModel> favouritePhotos;
+
+        private readonly UnsplashService _unsplashService;
 
         public GalleryViewModel()
         {
