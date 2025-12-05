@@ -40,7 +40,7 @@
                     
                     <Image.Triggers>
                         <DataTrigger TargetType="Image" Binding="{Binding IsFavourite}" Value="True">
-                            <Setter Property="Source" Value="fullheart.png"/>
+                            <Setter Property="Source" Value="full_heart.png"/>
                         </DataTrigger>
 
                         <DataTrigger TargetType="Image" Binding="{Binding IsFavourite}" Value="False">

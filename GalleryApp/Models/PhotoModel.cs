@@ -1,6 +1,8 @@
-﻿namespace GalleryApp.Models
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace GalleryApp.Models
 {
-    public class PhotoModel
+    public class PhotoModel : ObservableObject
     {
         public string Id { get; set; }
         public string SmallUrl { get; set; }

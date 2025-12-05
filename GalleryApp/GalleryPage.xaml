@@ -16,7 +16,9 @@
             <Button Text="Favorites" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
         </HorizontalStackLayout>
         
-        <CollectionView Grid.Row="1" ItemsSource="{Binding FeedPhotos}">
+        <CollectionView Grid.Row="1" ItemsSource="{Binding FeedPhotos}" 
+                        RemainingItemsThreshold="5"
+                        RemainingItemsThresholdReachedCommand="{Binding LoadNextPageCommand}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="3"
                                  HorizontalItemSpacing="5" VerticalItemSpacing="5"/>
