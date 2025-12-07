@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Text.Json;
-using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GalleryApp.Models;
 using GalleryApp.Services;
 
+
 namespace GalleryApp.ViewModels
 {
     internal partial class GalleryViewModel: ObservableObject
     {
-        [ObservableProperty]
-        private ObservableCollection<PhotoModel> feedPhotos;
+        public ObservableCollection<PhotoModel> FeedPhotos { get; set; }
 
+        public ObservableCollection<PhotoModel> FavouritePhotos { get; set; }
+        
         [ObservableProperty]
-        private ObservableCollection<PhotoModel> favouritePhotos;
+        private ObservableCollection<PhotoModel> displayedPhotos;
 
         [ObservableProperty]
         private bool isLoading;
@@ -35,7 +32,9 @@ namespace GalleryApp.ViewModels
             FeedPhotos = new ObservableCollection<PhotoModel>();
             FavouritePhotos = new ObservableCollection<PhotoModel>();
             _unsplashService = new UnsplashService("nIl5_5WLigTHarsoEk1IcxOI_5LuYiKeQeyqEm6cV1g");
-            Task.Run(async () => await LoadNextPageAsync());
+            _ = LoadNextPageAsync();
+
+            DisplayedPhotos = FeedPhotos;
         }
         
         [RelayCommand]
@@ -68,6 +67,18 @@ namespace GalleryApp.ViewModels
             return string.IsNullOrEmpty(json) ? new List<string>() : JsonSerializer.Deserialize<List<string>>(json);
         }
 
+        [RelayCommand]
+        public void ShowFeed()
+        {
+            DisplayedPhotos = FeedPhotos;
+        }
+
+        [RelayCommand]
+        public void ShowFavourites()
+        {
+            DisplayedPhotos = FavouritePhotos;
+        }
+        
         [RelayCommand]
         public async Task LoadNextPageAsync()
         {

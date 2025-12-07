@@ -12,12 +12,12 @@
         </Grid.RowDefinitions>
 
         <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
-            <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
+            <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFeedCommand}"/>
             <Label Text="|" TextColor="White" Margin="10" FontSize="20"/>
-            <Button Text="Favorites" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
+            <Button Text="Favourites" TextColor="White" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFavouritesCommand}"/>
         </HorizontalStackLayout>
         
-        <CollectionView Grid.Row="1" ItemsSource="{Binding FeedPhotos}" 
+        <CollectionView Grid.Row="1" ItemsSource="{Binding DisplayedPhotos}" 
                         RemainingItemsThreshold="5"
                         RemainingItemsThresholdReachedCommand="{Binding LoadNextPageCommand}">
             <CollectionView.ItemsLayout>
