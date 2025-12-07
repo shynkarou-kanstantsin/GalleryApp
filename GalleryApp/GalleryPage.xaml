@@ -13,6 +13,7 @@
 
         <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
             <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
+            <Label Text="|" TextColor="White" Margin="10" FontSize="20"/>
             <Button Text="Favorites" TextColor="White" BackgroundColor="Transparent" Margin="10"/>
         </HorizontalStackLayout>
         

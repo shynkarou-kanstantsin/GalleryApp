@@ -2,7 +2,7 @@
 
 namespace GalleryApp.Models
 {
-    public class PhotoModel : ObservableObject
+    public partial class PhotoModel : ObservableObject
     {
         public string Id { get; set; }
         public string SmallUrl { get; set; }
@@ -10,6 +10,8 @@ namespace GalleryApp.Models
         public string AuthorName { get; set; }
         public string AuthorLink { get; set; }
         public string Description { get; set; }
-        public bool IsFavourite { get; set; }
+
+        [ObservableProperty]
+        private bool isFavourite;
     }
 }
