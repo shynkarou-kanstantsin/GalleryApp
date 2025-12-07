@@ -12,16 +12,16 @@
         </Grid.RowDefinitions>
 
         <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
-            <Button Text="Feed" TextColor="Black" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFeedCommand}"/>
-            <Label Text="|" TextColor="White" Margin="10" FontSize="20"/>
-            <Button Text="Favourites" TextColor="Black" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFavouritesCommand}"/>
+            <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Command="{Binding ShowFeedCommand}"/>
+            <Label Text="|" TextColor="White" FontSize="20" VerticalTextAlignment="Center"/>
+            <Button Text="Favourites" TextColor="White" BackgroundColor="Transparent" Command="{Binding ShowFavouritesCommand}"/>
         </HorizontalStackLayout>
         
         <CollectionView Grid.Row="1" ItemsSource="{Binding DisplayedPhotos}" 
                         RemainingItemsThreshold="5"
                         RemainingItemsThresholdReachedCommand="{Binding LoadNextPageCommand}">
             <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="3"
+                <GridItemsLayout Orientation="Vertical" Span="2"
                                  HorizontalItemSpacing="5" VerticalItemSpacing="5"/>
             </CollectionView.ItemsLayout>
             

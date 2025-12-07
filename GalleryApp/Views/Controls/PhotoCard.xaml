@@ -34,7 +34,7 @@
                 <Image Source="heart.png"
                        VerticalOptions="Start" 
                        HorizontalOptions="End"
-                       Margin="0,5,10,0"
+                       Margin="0,5,25,0"
                        HeightRequest="30"
                        WidthRequest="30">
                     
