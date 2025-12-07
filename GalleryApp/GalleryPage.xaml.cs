@@ -2,9 +2,9 @@
 
 namespace GalleryApp
 {
-    public partial class MainPage : ContentPage
+    public partial class GalleryPage : ContentPage
     {
-        public MainPage()
+        public GalleryPage()
         {
             InitializeComponent();
 

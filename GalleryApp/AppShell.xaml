@@ -7,7 +7,7 @@
     Title="GalleryApp">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:GalleryPage}"
+        Route="GalleryPage" />
 
 </Shell>

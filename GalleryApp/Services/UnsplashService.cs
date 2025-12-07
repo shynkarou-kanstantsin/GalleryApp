@@ -41,7 +41,6 @@ namespace GalleryApp.Services
                     RegularUrl = item.GetProperty("urls").GetProperty("regular").GetString(),
                     AuthorName = item.GetProperty("user").GetProperty("name").GetString(),
                     AuthorLink = item.GetProperty("user").GetProperty("links").GetProperty("html").GetString(),
-                    Description = item.TryGetProperty("alt_description", out var desc) ? desc.GetString() : "",
                     IsFavourite = false
                 });
             }

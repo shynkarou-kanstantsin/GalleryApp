@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GalleryApp.Models;
 using GalleryApp.Services;
+using GalleryApp.Views;
 
 
 namespace GalleryApp.ViewModels
@@ -111,6 +112,13 @@ namespace GalleryApp.ViewModels
             {
                 isLoading = false;
             }
+        }
+
+        [RelayCommand]
+        public async Task OpenDetail(PhotoModel photo)
+        {
+            var detailPage = new DetailPage { BindingContext = new DetailPageViewModel(photo, this) };
+            await Shell.Current.Navigation.PushAsync(detailPage);
         }
     }
 }

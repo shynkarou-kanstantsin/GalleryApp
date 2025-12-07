@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:GalleryApp.Views.Controls"
-             x:Class="GalleryApp.MainPage">
+             x:Class="GalleryApp.GalleryPage">
 
     <Grid>
 
@@ -12,9 +12,9 @@
         </Grid.RowDefinitions>
 
         <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
-            <Button Text="Feed" TextColor="White" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFeedCommand}"/>
+            <Button Text="Feed" TextColor="Black" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFeedCommand}"/>
             <Label Text="|" TextColor="White" Margin="10" FontSize="20"/>
-            <Button Text="Favourites" TextColor="White" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFavouritesCommand}"/>
+            <Button Text="Favourites" TextColor="Black" BackgroundColor="Transparent" Margin="10" Command="{Binding ShowFavouritesCommand}"/>
         </HorizontalStackLayout>
         
         <CollectionView Grid.Row="1" ItemsSource="{Binding DisplayedPhotos}" 
